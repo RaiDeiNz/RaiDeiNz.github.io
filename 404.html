@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 Not Found !</title>
+<link rel="shortcut icon" type="image/logo.ico" href="/q/favicon.ico" size="any">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  font-size: 17px;
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+ 
+ #myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+</style>
+</head>
+<body>
+
+<video loop id="myVideo" poster="/q/404.gif" class="w3-display-middle" style="width:100%;height:100%">
+  <source src="/q/raidenFinal404.mp4" type="video/mp4">
+  <img src="/q/404.gif" title="Your browser does not support the <video> tag">
+</video>
+<div class="content">
+  <h1>Page Not Found !</h1>
+  <p>Raiden is here to protect the world. You are keeping him busy by searching for a page that doesn't exist.</p>
+  <button id="myBtn" onclick="myFunction()">Play</button>
+</div>
+<script>
+var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+</script> 
+</body>
+</html>
