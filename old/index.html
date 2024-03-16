@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+My Sweet Homepage
+</title>
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/q/favicon.ico" size="any">
+<style>
+   * {
+     box-sizing: border-box;
+   }
+   
+   body {   
+     position: relative;
+     margin: 0;
+     font-family: Arial;
+     font-size: 17px;
+   }
+   
+   #myVideo {
+     position: fixed;
+     right: 0;
+     bottom: 0;
+     min-width: 100%; 
+     min-height: 100%;
+   }
+   
+   .content {
+     position: relative;
+     bottom: 0;
+     background: rgba(0, 0, 0, 0.5);
+     color: #f1f1f1;
+     width: 100%;
+     padding: 20px;
+   }
+   </style>
+</head>
+<body>
+   <audio autoplay hidden>
+      <source src="../q/OldConnectionSound.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+   </audio> 
+   <video autoplay muted loop id="myVideo">
+      <source src="../q/raiden's light.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <div class="content">
+      <h1>Hello World<a href="../q/sites.html" target="_blank">!</a></h1>
+      <!--All of this site's div' content is created with copy on https://www.whoishostingthis.com/resources/assembly-language/ \
+      The reason for this is not to offer pirated content, but to secure it for myself. Many of the educational resources I saved to the browser to look at later were not there when I went back. For this reason, I keep it in my own github repo in order not to fall into this problem.-->
+      <p>An assembly language is an extremely low-level programming language that has a 1-to-1 correspondence to machine code — the series of binary instructions which move values in and out of registers in a CPU (or other microprocessor).</p>
+      <h2 id="introduction">Introduction</h2>
+      <p>A microprocessor is a mechanical calculator. It has a number of named registers, which are like holding pens for numbers. It receives instructions in the form of machine code, which is represented by a series of binary bits (1s and 0s). For example, here is a line of machine code:</p>
+      <pre><code>10110000 01100001</code></pre>
+      <p>The first few bits (<code>10110</code>) are an instruction to copy a value into a register. The next three digits (<code>000</code>) identify the register which the value will be copied into. The rest of it (<code>01100001</code>) is the value which is to be copied.</p>
+      <p>Of course <code>10110</code> is meaningless, and the computer doesn't "know" that it means "copy the value." The processor is designed so that the series of electrical impulses represented by <code>10110</code> (on-off-on-on-off) causes the desired result. This is part of what is meant by "mechanical."</p>
+      <p>Now if you're going to write a program for the processor to execute, you can imagine writing thousands of lines of 1s and 0s would be both tedious and error prone. The solution is assembly language. Assembly language provides human-understandable substitutions for long strings of binary code.</p>
+      <h3 id="example">Example</h3>
+      <p>For example, if <code>10110</code> means "move the value," then we could abbreviate it with the <code>MOV</code> command.</p>
+      <p>We could also give the <code>000</code> register a easier to remember name (in this case, the register is named <code>AL</code>).</p>
+      <p>Finally, we could render the value in a different numbering system, such as decimal (<code>91</code>) or hexidecimal (<code>61</code>). That line would then be <code>MOV AL,61</code>. Once a whole program is written this way, an <em>assembler</em> can easily translate each line into the appropriate binary representation.</p>
+      <p>Computers do work (perform calculations, move data, transform data), by processing billions of these tiny instructions per second.</p>
+      <p>Very simple instructions (move this value, copy that value, add these two values together and save the value over there) combine to form complex operations, which combine at higher and higher levels to actually do things you would recognize as meaningful.</p>
+      <h2 id="assembly-language-resources">Assembly Language Resources</h2>
+      <h3 id="online-resources">Online Resources</h3>
+      <h4 id="tutorials-and-basic-guides">Tutorials and Basic Guides</h4>
+      <ul>
+         <li>
+            <p><a href="http://www.tutorialspoint.com/assembly_programming/" target="_blank" rel="noopener noreferrer">Assembly Programming Tutorial</a> from Tutorials Point</p>
+         </li>
+         <li>
+            <p><a href="https://www.freebsd.org/doc/en_US.ISO8859-1/books/developers-handbook/x86.html" target="_blank" rel="noopener noreferrer">X86 Assembly Language Programming</a>, a chapter from the <a href="https://www.freebsd.org/doc/en_US.ISO8859-1/books/developers-handbook/index.html" target="_blank" rel="noopener noreferrer">FreeBSD Developers' Handbook</a>, which helps put assembly language writing in the context of operating system development</p>
+         </li>
+         <li>
+            <p><a href="http://0xax.blogspot.com/2014/08/say-hello-to-x64-assembly-part-1.html" target="_blank" rel="noopener noreferrer">Say Hello to X64 Assembly</a>, a fairly gentle introduction to assembly, from the <a href="http://0xax.blogspot.com/" target="_blank" rel="noopener noreferrer">Code as Art</a> blog</p>
+         </li>
+         <li>
+            <p><a href="http://cs.lmu.edu/~ray/notes/x86assembly/" target="_blank" rel="noopener noreferrer">X86 Assembly Language Programming</a>, another tutorial that places assembly language well in its OS programming context, this one in reference to Linux, Windows, and even a bit about Mac OS X</p>
+         </li>
+         <li>
+            <p><a href="http://www.drpaulcarter.com/pcasm/index.php" target="_blank" rel="noopener noreferrer">PC Assembly Language</a>, this focuses on 32-bit PCs running Linux, Windows, or FreeBSD</p>
+         </li>
+         <li>
+            <p><a href="http://www.cs.virginia.edu/~evans/cs216/guides/x86.html" target="_blank" rel="noopener noreferrer">X86 Assembly Guide</a>, from the University of Virginia Computer Science department</p>
+         </li>
+         <li>
+            <p><a href="http://www.plantation-productions.com/Webster/" target="_blank" rel="noopener noreferrer">Webster</a>: billing itself as "The place on the internet to learn assembly language," this site is (apparently) run by the author of <em><a href="http://www.amazon.com/Art-Assembly-Language-Randall-Hyde/dp/1593272073" target="_blank" rel="noopener noreferrer">The Art of Assembly Language</a></em>, and the inventor of <a href="https://en.wikipedia.org/wiki/High_Level_Assembly" target="_blank" rel="noopener noreferrer">HLA</a></p>
+         </li>
+         <li>
+            <p>Linux Assembly Tutorial</p>
+         </li>
+         <li>
+            <p><a href="http://ian.seyler.me/easy_x86-64/" target="_blank" rel="noopener noreferrer">Easy X86-64</a></p>
+         </li>
+         <li>
+            <p><a href="https://en.wikibooks.org/wiki/X86_Assembly" target="_blank" rel="noopener noreferrer">X86 Assembly</a></p>
+         </li>
+         <li>
+            <p><a href="https://www-s.acm.illinois.edu/sigwin/old/workshops/winasmtut.pdf" target="_blank" rel="noopener noreferrer">Windows Assembly Programming Tutorial</a> (pdf)</p>
+         </li>
+      </ul>
+      <h4>Video Tutorials</h4>
+      <ul>
+         <li>
+            <p><a href="https://youtu.be/mHC4-W3OUTQ?list=PLPedo-T7QiNsIji329HyTzbKBuCAHwNFC" target="_blank" rel="noopener noreferrer">Assembly Language Programming Tutorial</a>, a very thorough 55-video series on assembly, following the book <em><a href="http://www.amazon.com/Assembly-Language-x86-Processors-6th/dp/013602212X" target="_blank" rel="noopener noreferrer">Assembly Language for x86 Processors (6th Edition)</a></em> by Kip Irvine (if you aren't following the videos, you'll probably want the <a href="http://www.amazon.com/Assembly-Language-x86-Processors-Edition/dp/0133769402/" target="_blank" rel="noopener noreferrer">more recent edition</a>)</p>
+         </li>
+         <li>
+            <p><a href="https://youtu.be/1p6LfUkWPKI?list=PL4C2714CB525C3CD7" target="_blank" rel="noopener noreferrer">Assembly Language Programming Video Course</a>, a 70-part video series, taught by <a href="http://www.amazon.com/Arthur-Griffith/e/B000APVZ54/" target="_blank" rel="noopener noreferrer">Arthur Griffith</a>, who has a <a href="https://youtu.be/D3EULfvIo7A" target="_blank" rel="noopener noreferrer">very folksy charm</a></p>
+         </li>
+         <li>
+            <p><a href="https://youtu.be/xOm_jOeip_c" target="_blank" rel="noopener noreferrer">Assembly Language Intro</a>, a class room lecture at Cornell, introducing assembly language</p>
+         </li>
+         <li>
+            <p><a href="https://youtu.be/HXYhBCpDoVc" target="_blank" rel="noopener noreferrer">Assembly Language Programming</a>, an hour-long introduction to assembly, and a great format if you really liked following algebra examples on an over-head projector when you were in high school (this is part of a larger series on <a href="https://www.youtube.com/watch?v=liRPtvj7bFU&amp;list=PL0E131A78ABFBFDD0" target="_blank" rel="noopener noreferrer">Microprocessors and Microcontrollers</a>).</p>
+         </li>
+      </ul>
+      <h4 id="reference">Reference</h4>
+      <ul>
+         <li>
+            <p><a href="https://en.wikipedia.org/wiki/X86_instruction_listings" target="_blank" rel="noopener noreferrer">X86 instruction listings</a>, full list of all instructions for the x86 architectures, with notes on when each was added</p>
+         </li>
+         <li>
+            <p><a href="http://ref.x86asm.net/" target="_blank" rel="noopener noreferrer">X86 Opcode and Instruction Reference</a></p>
+         </li>
+         <li>
+            <p><a href="https://scadahacker.com/library/Documents/Cheat_Sheets/Programming%20-%20x86%20Instructions%201.pdf" target="_blank" rel="noopener noreferrer">Intel X86 Assembly Language Cheat Sheet</a> (pdf).</p>
+         </li>
+      </ul>
+      <h4 id="tools">Tools</h4>
+      <p>Assemblers — there are <a href="https://en.wikipedia.org/wiki/Comparison_of_assemblers" target="_blank" rel="noopener noreferrer">a lot of assemblers available</a> — here are a few of the most popular free and open source assemblers:</p>
+      <ul>
+         <li>
+            <p><a href="http://www.nasm.us/" target="_blank" rel="noopener noreferrer">NASM</a></p>
+         </li>
+         <li>
+            <p><a href="http://flatassembler.net/" target="_blank" rel="noopener noreferrer">FASM</a></p>
+         </li>
+         <li>
+            <p><a href="http://yasm.tortall.net/" target="_blank" rel="noopener noreferrer">YASM</a></p>
+         </li>
+         <li>
+            <p><a href="https://www.gnu.org/software/binutils/" target="_blank" rel="noopener noreferrer">GASM</a>.</p>
+         </li>
+      </ul>
+      <p>IDEs (Integrated Development Environments):</p>
+      <ul>
+         <li>
+            <p><a href="https://dman95.github.io/SASM/english.html" target="_blank" rel="noopener noreferrer">SASM</a>, Simple crossplatform IDE for NASM, MASM, GAS, FASM assembly languages</p>
+         </li>
+         <li>
+            <p><a href="http://fresh.flatassembler.net/" target="_blank" rel="noopener noreferrer">Fresh IDE</a>, visual assembly language IDE with built-in FASM assembler</p>
+         </li>
+         <li>
+            <p><a href="http://www.winasm.net/" target="_blank" rel="noopener noreferrer">WinAsm Studio</a>, a free IDE for developing 32-bit Windows and 16-bit DOS programs using the Assembler</p>
+         </li>
+         <li>
+            <p><a href="http://www.visualmasm.com/" target="_blank" rel="noopener noreferrer">Visual MASM</a>.</p>
+         </li>
+      </ul>
+      <h4 id="community-and-ongoing-learning">Community and Ongoing Learning</h4>
+      <ul>
+         <li>
+            <p><a href="http://www.dreamincode.net/forums/forum/112-assembly/" target="_blank" rel="noopener noreferrer">Assembly Forum at Dream.In.Code</a></p>
+         </li>
+         <li>
+            <p><a href="http://masm32.com/board/" target="_blank" rel="noopener noreferrer">The MASM Forum</a></p>
+         </li>
+         <li>
+            <p><a href="http://hackforums.net/forumdisplay.php?fid=149" target="_blank" rel="noopener noreferrer">Assembly Language and Machine Code at Hack Forums</a></p>
+         </li>
+      </ul>
+      <h3 id="books">Books</h3>
+      <ul>
+         <li>
+            <p><em><a href="http://www.amazon.com/Art-Assembly-Language-Randall-Hyde/dp/1593272073" target="_blank" rel="noopener noreferrer">The Art of Assembly Language</a></em> (<a href="http://www.plantation-productions.com/Webster/www.artofasm.com/index.html" target="_blank" rel="noopener noreferrer">online edition</a>) is one of the most popular books on assembly language, from always-readable No Starch Press; you might also be interested in these from the same author: <em><a href="http://www.amazon.com/Write-Great-Code-Understanding-Machine/dp/1593270038" target="_blank" rel="noopener noreferrer">Write Great Code: Volume 1: Understanding the Machine</a></em> and <em><a href="http://www.amazon.com/Write-Great-Code-Volume-High-Level/dp/1593270658" target="_blank" rel="noopener noreferrer">Write Great Code, Volume 2: Thinking Low-Level, Writing High-Level</a></em></p>
+         </li>
+         <li>
+            <p><em><a href="http://www.amazon.com/Assembly-Language-Step-Step-Programming/dp/0470497025" target="_blank" rel="noopener noreferrer">Assembly Language Step-by-Step: Programming with Linux</a></em></p>
+         </li>
+         <li>
+            <p><em><a href="http://www.amazon.com/gp/product/0764579010" target="_blank" rel="noopener noreferrer">Professional Assembly Language</a></em></p>
+         </li>
+         <li>
+            <p><em><a href="http://www.amazon.com/Assembly-Language-x86-Processors-7th/dp/0133769402/" target="_blank" rel="noopener noreferrer">Assembly Language for x86 Processors</a></em></p>
+         </li>
+         <li>
+            <p><em><a href="http://www.amazon.com/Modern-X86-Assembly-Language-Programming/dp/1484200659" target="_blank" rel="noopener noreferrer">Modern X86 Assembly Language Programming: 32-bit, 64-bit, SSE, and AVX</a></em></p>
+         </li>
+         <li>
+            <p><em><a href="http://www.amazon.com/Introduction-Bit-Assembly-Programming-Linux/dp/1484921909" target="_blank" rel="noopener noreferrer">ntroduction to 64 Bit Assembly Programming for Linux and OS X: Third Edition - for Linux and OS X</a></em></p>
+         </li>
+         <li>
+            <p><em><a href="http://www.amazon.com/Introduction-Assembly-Language-Computer-Architecture/dp/128403612X" target="_blank" rel="noopener noreferrer">Introduction To 80X86 Assembly Language And Computer Architecture</a></em></p>
+         </li>
+         <li>
+            <p><em><a href="http://www.amazon.com/Assembly-Language-Programming-Laptop-Computers/dp/1519408765" target="_blank" rel="noopener noreferrer">Assembly Language Programming: For PC and Laptop Computers</a></em>.</p>
+         </li>
+      </ul>
+      <h2 id="should-you-learn-assembly-language">Should You Learn Assembly Language?</h2>
+      <p>Whether you should learn assembly language depends on what your goals are. For most developers, the answer is "no."</p>
+      <p>There are two primary reasons to learn assembly language: because you want to use it directly, or because you want to understand computers at a fundamental level.</p>
+      <p>From a practical standpoint, only a relative handful of the world's engineers and computer scientists actually use assembly language.</p>
+      <p>The overwhelming majority of software development, including virtually all applications development of any kind, uses high level programming languages, and not assembly code. Some specific areas where assembly language gets used are:</p>
+      <ul>
+         <li>
+            <p>Operating systems</p>
+         </li>
+         <li>
+            <p>Firmware</p>
+         </li>
+         <li>
+            <p>Device drivers</p>
+         </li>
+         <li>
+            <p>Language design</p>
+         </li>
+         <li>
+            <p>Compiler design</p>
+         </li>
+         <li>
+            <p>Embedded systems</p>
+         </li>
+         <li>
+            <p>Hardware design</p>
+         </li>
+         <li>
+            <p>Advanced cryptography</p>
+         </li>
+         <li>
+            <p>Theoretical computer science</p>
+         </li>
+      </ul>
+      <p>The other reason to learn assembly language is just to gain a better understanding of what is actually going on deep in the guts of a computer. (This is why virtually all Computer Science majors have to learn assembly language.)</p>
+      <p>Of course, if you're the kind of person who is really interested in that, you might want to think about a career working in low-level systems development.</p>
+      <h3 id="other-things-to-learn">Other Things to Learn</h3>
+      <p>There are some languages where, if you know just a little, you can do a whole lot. <a href="/resources/python/">Python</a> and <a href="https://www.whoishostingthis.com/resources/ruby-on-rails/">Ruby</a> are like that — you can learn enough in a weekend to build something worthwhile. Assembly language is not like that.</p>
+      <p>Assembly language is never used in a vacuum. The type of engineer who needs to know assembly is likely to be working in area where there is a need a to know a handful of other skills to be effective. These likely include:</p>
+      <ul>
+         <li>
+            <p>Hardware languages, like <a href="https://www.whoishostingthis.com/resources/vhdl/">VHDL</a> and <a href="https://www.whoishostingthis.com/resources/verilog/">Verilog</a>, along with a good understanding of microprocessors and electrical engineering</p>
+         </li>
+         <li>
+            <p>Low-level operating system languages like <a href="https://www.whoishostingthis.com/resources/c-developer/">C</a> and its derivatives: <a href="https://www.whoishostingthis.com/resources/c-plus-plus/">C++</a>, <a href="https://www.whoishostingthis.com/resources/c-sharp/">C#</a>, and <a href="https://www.whoishostingthis.com/resources/d-programming/">D</a></p>
+         </li>
+         <li>
+            <p>Legacy languages like <a href="https://www.whoishostingthis.com/resources/fortran/">Fortran</a> and Cobol</p>
+         </li>
+         <li>
+            <p>Platform languages like <a href="https://www.whoishostingthis.com/resources/java-programming/">Java</a> and <a href="https://www.whoishostingthis.com/resources/objective-c/">Objective-C</a></p>
+         </li>
+         <li>
+            <p><a href="http://www.amazon.com/Algorithm-Design-Jon-Kleinberg/dp/0321295358" target="_blank" rel="noopener noreferrer">Algorithms</a></p>
+         </li>
+         <li>
+            <p><a href="http://www.amazon.com/Engineering-Compiler-Second-Keith-Cooper/dp/012088478X" target="_blank" rel="noopener noreferrer">Compiler</a>, interpreter, and <a href="http://www.amazon.com/gp/product/193435645X" target="_blank" rel="noopener noreferrer">language</a> design.</p>
+         </li>
+      </ul>
+   </div> 
+</body>
+</html>

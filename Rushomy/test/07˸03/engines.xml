@@ -1,0 +1,18 @@
+<pages>
+<link>
+<title>Google</title>
+<url>https://www.google.com/search</url> <!--using 'q' param-->
+</link>
+<!--<link>
+<title>Yandex</title>
+<url>https://yandex.com.tr/search/</url> using 'text' param
+</link>
+<link>
+<title>Bing</title>
+<url>https://www.bing.com/search</url> using 'q' param
+</link>
+<link>
+<title>Onion</title>
+<url>...</url>-->
+</link>
+</pages>
