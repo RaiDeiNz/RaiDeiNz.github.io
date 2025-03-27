@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <!--NE MUTLU TÜRKÜM DİYENE!-->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rai | Кибербезопасность и OSINT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Old+Turkic&display=swap" rel="stylesheet">
+    <style>
+      canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+      }
+
+      :root {
+        --primary: #2b2d42;
+        --secondary: #8d99ae;
+        --accent: #0f425e;
+        --light: #edf2f4;
+        --dark: #1a1a2e;
+        --text-dark: #1a1a2e;
+        --text-light: #edf2f4;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      body {
+        color: var(--text-dark);
+        line-height: 1.6;
+        padding: 20px;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .profile-card {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 800px;
+        padding: 30px;
+        text-align: center;
+        transition: transform 0.3s ease, background-color 0.3s, color 0.3s;
+      }
+
+      .profile-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid var(--accent);
+        margin: 0 auto 20px;
+        display: block;
+      }
+
+      h1 {
+        color: var(--primary);
+        margin-bottom: 10px;
+        font-size: 1.8rem;
+        transition: color 0.3s;
+      }
+
+      .title {
+        color: var(--secondary);
+        font-weight: 400;
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        transition: color 0.3s;
+      }
+
+      .bio {
+        margin-bottom: 25px;
+        color: var(--text-dark);
+        transition: color 0.3s;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 25px;
+      }
+
+      .social-links a {
+        color: var(--primary);
+        font-size: 1.5rem;
+        transition: color 0.3s, transform 0.3s;
+      }
+
+      .social-links a:hover {
+        color: var(--accent);
+        transform: scale(1.2);
+      }
+
+      .btn {
+        display: block;
+        background: var(--accent);
+        color: white;
+        padding: 10px 25px;
+        border-radius: 50%;
+        text-decoration: none;
+        font-weight: 600;
+        margin: 5px auto;
+        transition: background 0.3s, transform 0.3s;
+        width: 80%;
+        max-width: 200px;
+      }
+
+      .btn:hover {
+        background: #082287;
+        transform: translateY(-5px);
+      }
+
+      /*.skills {
+            margin-top: 25px;
+        }
+        
+        .skills h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+            transition: color 0.3s;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .skill-tag {
+            background: var(--secondary);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            transition: background 0.3s;
+        }*/
+      .theme-btn {
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 20px;
+        margin-top: 15px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .dark-mode {
+        background: var(--dark);
+        color: var(--text-light);
+      }
+
+      .dark-mode h1,
+      .dark-mode h3 {
+        color: var(--text-light) !important;
+      }
+
+      .dark-mode .title {
+        color: var(--secondary) !important;
+      }
+
+      .dark-mode .bio {
+        color: var(--text-light) !important;
+      }
+
+      .dark-mode .social-links a {
+        color: var(--text-light);
+      }
+
+      @media (max-width: 480px) {
+        .profile-card {
+          padding: 20px;
+        }
+
+        .profile-img {
+          width: 120px;
+          height: 120px;
+        }
+      }
+      
+      .noto-sans-old-turkic-regular {
+        font-family: "Noto Sans Old Turkic", sans-serif;
+        font-weight: 400;
+        /*font-style: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="q24"></canvas>
+    <div class="profile-card dark-mode" id="profile-card">
+      <img src="https://blog.raide.in/assets/img/pp.webp" alt="Profil Resmi" class="profile-img">
+      <h1>raid31n</h1>
+      <p class="title">Эксперт по кибербезопасности - Специалист по OSINT</p>
+      <p class="bio">Я специализируюсь на анализе данных с открытым исходным кодом, тестировании на проникновение и анализе безопасности. Помимо OSINT, меня также интересуют SIGINT и любительское радио. Мне нравится изучать новые технологии и вносить вклад в общественные проекты. Я пишу фанфик о жизни хакера в постапокалиптической вселенной.</p>
+      <div class="social-links">
+        <a href="https://github.com/RaiDeiNz" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/raideinz" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://twitter.com/raid31n" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="mailto:raidein@pm.me" rel="noopener noreferrer">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      <div class="btn-container">
+        <a href="https://blog.raide.in" class="btn" target="_blank" rel="noopener noreferrer">Блог</a>
+        <a href="https://project.raide.in" class="btn" target="_blank" rel="noopener noreferrer">Проекты</a>
+        <a href="https://articles.raide.in" class="btn" target="_blank" rel="noopener noreferrer">Статьи</a>
+        <a href="https://news.raide.in" class="btn" target="_blank" rel="noopener noreferrer">Лента новостей</a>
+        <!--<a href="./src/assets/docs/Rai-DeiN_CV.pdf" class="btn" download>Скачать резюме</a>-->
+      </div>
+      <!--<div class="skills"><h3>Навыки</h3><div class="skill-tags"><span class="skill-tag">OSINT</span><span class="skill-tag">Pentest</span><span class="skill-tag">Python</span><span class="skill-tag">Bash</span><span class="skill-tag">Network Security</span><span class="skill-tag">Malware Analysis</span><span class="skill-tag">SIGINT</span><span class="skill-tag">Радио</span></div></div>-->
+      <button class="theme-btn" id="theme-btn">🌓 Изменить тему</button>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const profileCard = document.getElementById('profile-card');
+        const themeBtn = document.getElementById('theme-btn');
+
+        function toggleTheme() {
+          profileCard.classList.toggle('dark-mode');
+          if (profileCard.classList.contains('dark-mode')) {
+            themeBtn.textContent = '☀️ Светлая тема';
+          } else {
+            themeBtn.textContent = '🌙 Темная тема';
+          }
+        }
+        themeBtn.addEventListener('click', toggleTheme);
+      });
+      var q24 = document.getElementById("q24");
+      var q31 = q24.getContext("2d");
+      q24.height = window.innerHeight;
+      q24.width = window.innerWidth;
+      var matrix = "的一是在不了有和人这中大为上个国我以要他时龙飞ᚠᚢᚦᚬᚱᚴᚼᚽᚾᚿᛅᛆᛇᛈᛉᛊᛋᛌᛍᛎᛏᛐᛑᛒᛓᛔᛕᛖᛗᛘᛙᛚᛛᛜᛝᛞᛟ123456789@#$%^&*()*&^%+-/~{[|`]}abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+      /*
+              --GUYS, NEED SOME HELP WITH NEW UNICODES TO WRITE OLD TURKIC RUNES AS MATRIX RAIN. VIKING RUNES ARE WORKING SMOOTHLY; BUT TURKIC ARE NOT!--
+      HERE THE RUNES as var:
+      
+      var matrix = ['\u{10C00}', '\u{10C01}', '\u{10C02}', '\u{10C03}', '\u{10C04}', '\u{10C05}', '\u{10C06}', '\u{10C07}', '\u{10C08}', '\u{10C09}', '\u{10C0A}', '\u{10C0B}', '\u{10C0C}', '\u{10C0D}', '\u{10C0E}',
+      '\u{10C10}', '\u{10C11}', '\u{10C12}', '\u{10C13}', '\u{10C14}', '\u{10C15}', '\u{10C16}', '\u{10C17}', '\u{10C18}', '\u{10C19}', '\u{10C1A}', '\u{10C1B}', '\u{10C1C}', '\u{10C1D}', '\u{10C1E}',
+      '\u{10C20}', '\u{10C21}', '\u{10C22}', '\u{10C23}', '\u{10C24}', '\u{10C25}', '\u{10C26}', '\u{10C27}', '\u{10C28}', '\u{10C29}', '\u{10C2A}', '\u{10C2B}', '\u{10C2C}', '\u{10C2D}', '\u{10C2E}',
+      '\u{10C30}', '\u{10C31}', '\u{10C32}', '\u{10C33}', '\u{10C34}', '\u{10C35}', '\u{10C36}', '\u{10C37}', '\u{10C38}', '\u{10C39}', '\u{10C3A}', '\u{10C3B}', '\u{10C3C}', '\u{10C3D}', '\u{10C3E}',
+      '\u{10C40}', '\u{10C41}', '\u{10C42}', '\u{10C43}', '\u{10C44}', '\u{10C45}', '\u{10C46}', '\u{10C47}', '\u{10C48}'];
+      
+      */
+      
+      matrix = matrix.split("");
+      var font_size = 13;
+      var columns = q24.width / font_size;
+      var drops = [];
+      for (var x = 0; x < columns; x++) drops[x] = 1;
+
+      function draw() {
+        q31.fillStyle = "rgba(0, 0, 0, 0.04)";
+        q31.fillRect(0, 0, q24.width, q24.height);
+        q31.fillStyle = "#1686a8";
+        q31.font = font_size + "px 'Noto Sans Old Turkic', sans-serif";
+        for (var i = 0; i < drops.length; i++) {
+          var text = matrix[Math.floor(Math.random() * matrix.length)];
+          q31.fillText(text, i * font_size, drops[i] * font_size);
+          if (drops[i] * font_size > q24.height && Math.random() > 0.975) drops[i] = 0;
+          drops[i]++;
+        }
+      }
+      setInterval(draw, 55);
+      window.addEventListener('resize', function() {
+        q24.height = window.innerHeight;
+        q24.width = window.innerWidth;
+        columns = q24.width / font_size;
+        drops = [];
+        for (var x = 0; x < columns; x++) drops[x] = 1;
+      });
+    </script>
+  </body>
+</html>
