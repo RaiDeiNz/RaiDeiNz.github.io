@@ -1,6 +1,6 @@
 {
-  "name": "Rai | Кибербезопасность и OSINT",
-  "short_name": "Rai",
+  "name": "raidein.tech",
+  "short_name": "raidein.tech",
   "icons": [
     {
       "src": "/src/assets/media/favicons/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#2b2d42",
-  "background_color": "#1a1a2e",
+  "theme_color": "#58545c",
+  "background_color": "#58545c",
   "display": "standalone"
 }
